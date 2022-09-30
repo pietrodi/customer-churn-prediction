@@ -75,11 +75,11 @@ def save_model(model):
     Args:
         model: The model to be saved
     """
-    pickle.dump(model, open('../models/model.pkl', 'wb'))
+    pickle.dump(model, open('../model.pkl', 'wb'))
 
 def main():
     data = load_data(DATA_PATH)
-    model = train_model(data)
+    model = train_model(data, BEST_PARAMS)
     save_model(model)
 
 if __name__ == '__main__':
