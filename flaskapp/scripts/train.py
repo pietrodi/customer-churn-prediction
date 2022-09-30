@@ -11,6 +11,8 @@ from xgboost import XGBClassifier
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.pipeline import make_pipeline
 
+from flaskapp.scripts.prepare_data import prepare_data
+
 """ The training dataframe path. """
 DATA_PATH = '../data/customer-data.csv'
 """ The best params for the model. """
@@ -41,11 +43,7 @@ def train_model(df, params):
         The trained model
     """
     #Feature Engineering
-    df['HasNoBalance'] = df['Balance'] == 0
-
-    df['Balance'] = np.log1p(df['Balance'])
-    df['Age'] = np.log1p(df['Age'])
-
+    df = prepare_data(df)
     y = df['Exited'].values
 
     numerical_features = ['Balance', 'CreditScore', 'Age']
