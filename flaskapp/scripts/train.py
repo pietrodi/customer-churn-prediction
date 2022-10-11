@@ -13,6 +13,10 @@ from imblearn.pipeline import make_pipeline
 
 from prepare_data import prepare_data
 
+"""
+This script is used for training the model used for prediction.
+"""
+
 """ The training dataframe path. """
 DATA_PATH = '../data/customer-data.csv'
 """ The best params for the model. """

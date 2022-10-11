@@ -1,5 +1,9 @@
 import requests
 
+"""
+This script is used for sending a sample request to test the app.
+"""
+
 LOCAL_URL = 'http://localhost:9696/predict'
 SAMPLE_CUSTOMER = {
     'CustomerId': 83131903810,

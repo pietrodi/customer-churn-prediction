@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 
+"""
+This script is used to prepare training and prediction data for the model.
+"""
+
 def prepare_data(df):
     """
     Returns prepared dataframe for training or prediction
