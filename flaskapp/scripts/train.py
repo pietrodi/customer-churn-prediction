@@ -11,7 +11,7 @@ from xgboost import XGBClassifier
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.pipeline import make_pipeline
 
-from flaskapp.scripts.prepare_data import prepare_data
+from prepare_data import prepare_data
 
 """ The training dataframe path. """
 DATA_PATH = '../data/customer-data.csv'
@@ -73,7 +73,7 @@ def save_model(model):
     Args:
         model: The model to be saved
     """
-    pickle.dump(model, open('../model.pkl', 'wb'))
+    pickle.dump(model, open('model.pkl', 'wb'))
 
 def main():
     data = load_data(DATA_PATH)

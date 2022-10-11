@@ -8,9 +8,9 @@ from scripts.prepare_data import prepare_data
 
 app = Flask('bank-churn')
 
-model_file = 'model.pkl'
+MODEL_PATH = 'model.pkl'
 
-with open(model_file, 'rb') as f_in:
+with open(MODEL_PATH, 'rb') as f_in:
     model = pickle.load(f_in)
 
 @app.route('/predict', methods = ['POST'])
