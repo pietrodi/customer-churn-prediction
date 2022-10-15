@@ -14,7 +14,7 @@ from imblearn.pipeline import make_pipeline
 from prepare_data import prepare_data
 
 """
-This script is used for training the model used for prediction.
+This script is used for training and saving the model used for prediction.
 """
 
 """ The training dataframe path. """

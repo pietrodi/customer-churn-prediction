@@ -15,6 +15,16 @@ with open(MODEL_PATH, 'rb') as f_in:
 
 @app.route('/predict', methods = ['POST'])
 def predict():
+    """
+    Receives a json containing a customer data
+    in a post request and returns a json
+    containing the probability of churn of the customer
+    and if the customer is likely to churn in response.
+
+    Returns:
+        A json response to the request containing the probability 
+        of churn of the customer and if the customer is likely to churn
+    """
     customer = request.get_json()
     customer_df = pd.json_normalize(customer)
     predict_df = prepare_data(customer_df)
